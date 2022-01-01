@@ -1,0 +1,41 @@
+---
+title: "Raport z analizy"
+author: "Jantoni Mikulski"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: yes
+    toc_depth: 4
+    toc_float: yes
+    number_sections: yes
+    includes:
+       in_header: "GA_header.html"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+Sys.setenv(lang = "en")
+options(width = 1e4)
+library(readxl)
+library(ggplot2)
+library(ggbeeswarm)
+library(car)
+library(boot)
+library(dplyr)
+library(forcats)
+library(glue)
+library(purrr)
+library(tidyr)
+# library(ggpubr)
+# library(dunn.test)
+# library(rstatix)
+
+#baza <- read_excel("rozmiary.xlsx")
+```
+
+# Wstęp
+
+```{r}
+
+```
+
