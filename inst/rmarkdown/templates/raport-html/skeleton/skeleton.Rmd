@@ -3,13 +3,18 @@ title: "Raport z analizy"
 author: "Jantoni Mikulski"
 date: "`r Sys.Date()`"
 output: 
-  html_document:
-    toc: yes
+  rmdformats::downcute:
+#    toc: yes
     toc_depth: 4
-    toc_float: yes
+#    toc_float: yes
     number_sections: yes
     includes:
        in_header: "GA_header.html"
+#    self_contained: true
+#    thumbnails: true
+#    lightbox: true
+#    gallery: false
+#    highlight: tango
 ---
 
 ```{r setup, include=FALSE}
