@@ -2,7 +2,7 @@ Package: JantoTools
 Title: A personal collection of tools for automation of all kinds of tasks
 Version: 0.1.0.0000
 Authors@R: 
-    person("Jantoni", "Mikulski", , "jantoni.mikulski@gmail.com", role = c("aut", "cre"),
+    person("Jantoni", "Mikulski","jantoni.mikulski@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-6370-0176"))
 Description: TODO: What the package does (one paragraph).
 License: GPL (>= 3)
@@ -10,4 +10,7 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Imports:
-    rmdformats
+    rmdformats,
+    pkgload,
+    rlang,
+    rmarkdown

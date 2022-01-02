@@ -7,3 +7,5 @@ devtools::load_all()
 #auto tests with testthis
 testthat::test_check()
 devtools::check()
+devtools::install()
+library(JantoTools)

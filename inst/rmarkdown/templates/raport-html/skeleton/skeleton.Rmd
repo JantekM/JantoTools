@@ -4,12 +4,8 @@ author: "Jantoni Mikulski"
 date: "`r Sys.Date()`"
 output: 
   rmdformats::downcute:
-#    toc: yes
     toc_depth: 4
-#    toc_float: yes
     number_sections: yes
-    includes:
-       in_header: "GA_header.html"
 #    self_contained: true
 #    thumbnails: true
 #    lightbox: true
@@ -38,7 +34,7 @@ library(tidyr)
 #baza <- read_excel("rozmiary.xlsx")
 ```
 
-# Wstęp
+# Let's go
 
 ```{r}
 
