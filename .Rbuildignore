@@ -3,3 +3,4 @@
 ^workflow\.R$
 ^LICENSE\.md$
 ^LICENSE$
+^inst/rmarkdown/templates/raport\-html/skeleton/skeleton\.html$
