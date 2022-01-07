@@ -13,7 +13,7 @@ raporthtml(
   lightbox = FALSE,
   thumbnails = FALSE,
   gallery = FALSE,
-  toc_depth = 3,
+  toc_depth = 5,
   embed_fonts = TRUE,
   use_bookdown = FALSE,
   pandoc_args = NULL,

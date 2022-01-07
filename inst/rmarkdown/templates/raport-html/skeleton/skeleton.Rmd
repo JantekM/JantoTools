@@ -3,8 +3,8 @@ title: "Raport z analizy"
 author: "Jantoni Mikulski"
 date: "`r Sys.Date()`"
 output: 
-  rmdformats::downcute:
-    toc_depth: 4
+  JantoTools::downcute:
+    toc_depth: 5
     number_sections: yes
 #    self_contained: true
 #    thumbnails: true
@@ -17,6 +17,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 Sys.setenv(lang = "en")
 options(width = 1e4)
+INTERACTIVE <- FALSE
 library(readxl)
 library(ggplot2)
 library(ggbeeswarm)
