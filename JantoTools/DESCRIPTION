@@ -5,8 +5,14 @@ Authors@R:
     c(person(given = "Jantoni", family = "Mikulski", 
     email = "jantoni.mikulski@gmail.com", role = c("aut", "cre"), 
     comment = c(ORCID = "0000-0001-6370-0176")))
-Description: Contains some functions for common tasks around making statistics research, reports, data sanitizing etc. May be not fully documented. Use at your own risk. 
+Description: Contains some functions for common tasks around making statistics 
+    research, reports, data sanitizing etc. May be not fully documented. Use at your own risk. 
 License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Imports: 
+    stats
