@@ -30,7 +30,8 @@ test_that("formatP() basic work", {
   expect_equal(formatP(0.0026485635335, sig.digs = 2), "0.26%")
   expect_equal(formatP(5e-33), "<0.001%")
   expect_equal(formatP(1), ">99.99%")
-  expect_equal(formatP(), "infinity")
+  expect_equal(formatP(0.000001, min.sig = 0.01), "<0.01%")
+  expect_equal(formatP(1, max.sig = 99), ">99%")
 })
 
 test_that("formatOR() basic work", {
