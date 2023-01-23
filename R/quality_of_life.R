@@ -1,5 +1,5 @@
 
-#' Infix 'not in' operator
+#' Infix not in operator
 #'
 #' Function being basically the opposite of %in% operator. Strictly a QoL thing
 #'
@@ -11,9 +11,11 @@
 #' @family QoL
 #'
 #' @examples
-#' 1 %!in% c(2, 1, 3) # -> F
-#' c(1, 5, 10) %!in% c(2,1,3) # -> F T T
-'%!in%' <- function(lhs,rhs)
+#' \dontrun{
+#'  1 %notin% c(2, 1, 3) # -> F
+#'  c(1, 5, 10) %notin% c(2,1,3) # -> F T T
+#' }
+'%notin%' <- function(lhs,rhs)
 {
   !('%in%'(lhs,rhs))
 }
