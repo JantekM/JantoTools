@@ -2,16 +2,9 @@
 % Please edit documentation in R/formatting.R
 \name{signif_sym}
 \alias{signif_sym}
-\title{Changes p-value number to a significance symbol for decorative purposes}
+\title{Changes p-value number to a significance symbol for decorative purposes.}
 \usage{
-signif_sym(
-  x,
-  max_asterisks = 5,
-  bonferoni = 1,
-  NA_instead_of_error = F,
-  include_dot = T,
-  ns_sym = " "
-)
+signif_sym(x, max_asterisks = 5, bonferoni = 1, include_dot = T, ns_sym = " ")
 }
 \arguments{
 \item{x}{A numeric vector of input probabilities}
@@ -21,8 +14,6 @@ signif_sym(
 \item{bonferoni}{Number of tests in a family of tests when applying the Bonferroni correction for multiple comparisons problem. Is 1 by default which is same as not applying any correction.
 Use it only if the passed p-values are not corrected already.}
 
-\item{NA_instead_of_error}{Logical, by default (FALSE) if the functions sees any probability outside <0,1> it raises an error. However this behaviour can be changed to return NAs instead.}
-
 \item{include_dot}{Logical, default TRUE, should the dot symbol be used for borderline significance that is between 5\% and 10\%?}
 
 \item{ns_sym}{Character (default ' '), the symbol used for the non-significant results. Set to 'ns' APA/NEJM standards.}
@@ -31,7 +22,7 @@ Use it only if the passed p-values are not corrected already.}
 A character vector with significance symbols.
 }
 \description{
-Changes p-value number to a significance symbol for decorative purposes
+Any NAs in the input are always transformed to "". Probabilities outside range <0,1> raise an error.
 }
 \examples{
 x <- 3e-4
