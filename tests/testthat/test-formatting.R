@@ -24,3 +24,18 @@ test_that("remove_diacritics() basic work", {
   expect_equal(remove_diacritics("Abece \u017C\u00F3\u0142\u0107"), "Abece zolc")
   expect_equal(remove_diacritics(c("Abece", "\u017C\u00F3\u0142\u0107", "lata \u0107ma")), c("Abece", "zolc", "lata cma"))
 })
+
+test_that("formatP() basic work", {
+  expect_equal(formatP(0.0026485635335), "0.265%")
+  expect_equal(formatP(0.0026485635335, sig.digs = 2), "0.26%")
+  expect_equal(formatP(5e-33), "<0.001%")
+  expect_equal(formatP(1), ">99.99%")
+  expect_equal(formatP(), "infinity")
+})
+
+test_that("formatOR() basic work", {
+  expect_equal(formatOR(0.0026485635335), "0.00265")
+  expect_equal(formatOR(0.0026485635335, sig.digs = 2), "0.0026")
+  expect_equal(formatOR(Inf), "Inf")
+  expect_equal(formatOR(Inf, inf.as = 'infinity'), "infinity")
+})

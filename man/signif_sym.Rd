@@ -9,14 +9,14 @@ signif_sym(x, max_asterisks = 5, bonferoni = 1, include_dot = T, ns_sym = " ")
 \arguments{
 \item{x}{A numeric vector of input probabilities}
 
-\item{max_asterisks}{Number of asterisks (*) for the most significant results, default is 5. Cannot be smaller than 2. Set to 3 for APA/NEJM standards.}
+\item{max_asterisks}{Number of asterisks (*) for the most significant results, default is \strong{5}. Cannot be smaller than 2. Set to 3 for APA/NEJM standards.}
 
-\item{bonferoni}{Number of tests in a family of tests when applying the Bonferroni correction for multiple comparisons problem. Is 1 by default which is same as not applying any correction.
+\item{bonferoni}{Number of tests in a family of tests when applying the Bonferroni correction for multiple comparisons problem. Is \strong{1} by default which is same as not applying any correction.
 Use it only if the passed p-values are not corrected already.}
 
-\item{include_dot}{Logical, default TRUE, should the dot symbol be used for borderline significance that is between 5\% and 10\%?}
+\item{include_dot}{Logical, default \strong{TRUE}, should the dot symbol be used for borderline significance that is between 5\% and 10\%?}
 
-\item{ns_sym}{Character (default ' '), the symbol used for the non-significant results. Set to 'ns' APA/NEJM standards.}
+\item{ns_sym}{Character (default \strong{' '}), the symbol used for the non-significant results. Set to 'ns' APA/NEJM standards.}
 }
 \value{
 A character vector with significance symbols.
@@ -28,3 +28,9 @@ Any NAs in the input are always transformed to "". Probabilities outside range <
 x <- 3e-4
 signif_sym(x)
 }
+\seealso{
+Other publishing-formatting: 
+\code{\link{formatOR}()},
+\code{\link{formatP}()}
+}
+\concept{publishing-formatting}
