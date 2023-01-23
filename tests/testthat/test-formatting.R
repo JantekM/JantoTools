@@ -18,3 +18,9 @@ test_that("signif_sym() custom params", {
   expect_equal(signif_sym(c(1, 0.5, 0.07, 0.03, 0.008, 0.0008, 0.00008), include_dot = F), c(" "," "," ","*","**","***","****"))
   expect_equal(signif_sym(c(1, 0.5, 0.07, 0.03, 0.008, 0.0008, 0.00008), include_dot = F, ns_sym = 'ns'), c("ns","ns","ns","*","**","***","****"))
 })
+
+
+test_that("remove_diacritics() basic work", {
+  expect_equal(remove_diacritics("Abece \u017C\u00F3\u0142\u0107"), "Abece zolc")
+  expect_equal(remove_diacritics(c("Abece", "\u017C\u00F3\u0142\u0107", "lata \u0107ma")), c("Abece", "zolc", "lata cma"))
+})

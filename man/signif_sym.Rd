@@ -2,7 +2,7 @@
 % Please edit documentation in R/formatting.R
 \name{signif_sym}
 \alias{signif_sym}
-\title{Changes p-value number to a significance symbol for decorative purposes.}
+\title{Changes p-value number to a significance symbol for decorative purposes}
 \usage{
 signif_sym(x, max_asterisks = 5, bonferoni = 1, include_dot = T, ns_sym = " ")
 }

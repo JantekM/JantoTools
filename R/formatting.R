@@ -1,4 +1,4 @@
-#' Changes p-value number to a significance symbol for decorative purposes.
+#' Changes p-value number to a significance symbol for decorative purposes
 #'
 #' Any NAs in the input are always transformed to "". Probabilities outside range <0,1> raise an error.
 #'
@@ -54,5 +54,23 @@ signif_sym <-
   ))
 }
 
-
-
+#' Replaces Polish diacritic letters with their plain Latin equivalents
+#'
+#' Comes practical when some functions doesn't work well with UTF-8 characters. Like for example roxygen documentation generator ;-)
+#'
+#' @param string A character vector to be transformed
+#'
+#' @return A character vector without Polish diacritic letters
+#' @export
+#'
+#' @examples
+#' remove_diacritics("Wis\u0142a i \u017C\u00F3\u0142\u0107") # -> "Wisla i zolc"
+#' # Unfortunately Roxygen documentation can have non ASCII characters only as escape characters
+#'
+remove_diacritics = function(string){
+  chartr(
+    "\u0105\u0104\u0144\u0143\u0107\u0106\u0119\u0118\u017C\u017B\u017A\u0179\u0142\u0141\u015B\u015A\u00F3\u00D3",
+    "aAnNcCeEzZzZlLsSoO",
+    string
+  )
+}
