@@ -1,6 +1,6 @@
 
 
-uc <- function(source, ..., allow_partial_subst = T, warn_on_partial_subst = T, envir = parent.frame()){
+uc <- function(source, ..., allow_partial_subst = T, warn_on_partial_subst = T, envir = parent.env(environment())){
   dots = substitute(alist(...))
   target_names = names(dots)
 
@@ -24,7 +24,8 @@ uc <- function(source, ..., allow_partial_subst = T, warn_on_partial_subst = T, 
   }
 }
 
-uc_positional_ <- function(source, ..., allow_partial_subst = F, warn_on_partial_subst = T, envir = parent.env()){
+uc_positional_ <- function(source, ..., allow_partial_subst = F, warn_on_partial_subst = T, envir = envir){
+  #browser()
   dots = substitute(alist(...))
   target_names = names(dots)
   if(source %>% length() < dots %>% length()-1){
@@ -43,14 +44,23 @@ uc_positional_ <- function(source, ..., allow_partial_subst = F, warn_on_partial
 
 
   for(ind in 2:length(dots)){
-    #TODO: implement it
+    if(substr(dots[[ind]], 1,1)=='_'){
+      if(substr(dots[[ind]], 2,2)=='_'){
+        break
+      }
+      else{
+        next
+      }
+    }
+    assign(dots[[ind]] %>% as.character(), source[[ind-1]], envir=envir)
   }
 }
-uc_named_ <- function(source, ..., allow_partial_subst = F, warn_on_partial_subst = T, envir = parent.env()){
+uc_named_ <- function(source, ..., allow_partial_subst = F, warn_on_partial_subst = T, envir = envir){
   #TODO: implement the named variant
 }
 
 list(a=1, z=0) %>% uc(b = 3, c = 4)
+list(a=3, z=4) %>% uc(`_a`, d)
+environment()
 list(a=1, z=0) %>% uc(b, c)
-list(a=1, z=0) %>% uc(b, c = 3)
 list(a=1, z=0) %>% uc(b, NULL, .warn = T)
